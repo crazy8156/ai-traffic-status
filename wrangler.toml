@@ -1,24 +1,10 @@
 name = "ai-traffic-status"
-main = "src/index.ts"
+main = "src/index.js"
 compatibility_date = "2024-10-22"
 
 kv_namespaces = [
-  { binding = "STATUSES", id = "XXXXXX-STATUSES-ID", preview_id = "YYYYYY-STATUSES-PREVIEW" }
+  { binding = "STATUSES", id = "", preview_id = "" }
 ]
-
-# 可選：若你要收 events / 截圖
-# r2_buckets = [
-#   { binding = "EVENTS", bucket_name = "ai-traffic-events" }
-# ]
 
 [vars]
-# 用於簡單驗證（跟 Colab 的 FRONTEND_BEARER 一致）
-API_BEARER = "replace-with-a-strong-token"
-
-[observability]
-enabled = true
-
-# 開公開路由
-routes = [
-  { pattern = "your-domain.com/status*", zone_name = "your-domain.com" }
-]
+# API_BEARER 走 GitHub Secret 注入，不放這裡
